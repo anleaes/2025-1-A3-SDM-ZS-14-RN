@@ -7,15 +7,12 @@ import { API_BASE_URL } from '@/scripts/api'
 type Props = DrawerScreenProps<DrawerParamList, 'CreateUnidadeSaude'>;
 
 const CreateUnidadeSaudeScreen = ({ navigation }: Props) => {
-  // Estados para cada campo do formulário
   const [nome, setNome] = useState('');
   const [endereco, setEndereco] = useState('');
   const [telefone, setTelefone] = useState('');
-  const API_URL = `${API_BASE_URL}unidades-saude/`; // Use o seu IP
+  const API_URL = `${API_BASE_URL}unidades-saude/`;
 
-  // Função para guardar os dados
   const handleSave = async () => {
-    // Validação simples
     if (!nome || !endereco) {
       Alert.alert('Erro', 'Os campos Nome e Endereço são obrigatórios.');
       return;
